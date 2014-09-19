@@ -1,5 +1,7 @@
 $(document).ready(function() {
   var table = '';
+  var visible = true;
+
   for (var i = 0; i < 9; i++) {
     table += "<tr>";
     for (var j= i*10+1; j < (i*10)+11; j++) {
@@ -41,8 +43,29 @@ $(document).ready(function() {
     }
 
     if ('message' in data) {
-      $("body > .container-fluid").html("<center class='jumbotron'><h1>"+ data.message +"</h1></center>");
+      if (!visible) {
+        $(".modal, .modal-backdrop").show();
+        visible = true;
+      }
+      $("#message").html("<center><h1>"+ data.message +"</h1></center>");
+    } else if ('timer' in data) {
+      if (!visible) {
+        $(".modal, .modal-backdrop").show();
+        visible = true;
+      }
+      $("#message").html(function(){
+        console.log(data.timer);
+        var obj = new Date(parseInt(data.timer) * 1000);
+        var timer = obj.getUTCHours() +" : "+ obj.getUTCMinutes()+" : "+obj.getUTCSeconds();
+        return "<center><h1> Time left to start the game: "+ timer +"</h1></center>";
+      });
+    } else {
+      if (visible) {
+        $(".modal, .modal-backdrop").hide();
+        visible = false;
+      }
     }
+
   });
   socket.on('disconnect', function(){
     alert("You are offline");

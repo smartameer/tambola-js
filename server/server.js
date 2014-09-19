@@ -58,7 +58,29 @@ io.sockets.on('connection', function (socket) {
   }
   socket.on('disconnect', function() {
     console.log('socket connection disconnected');
+    });
+  socket.on('timmer', function() {
+      console.log("game start time "+gameStartTime);
   });
 });
 
-var runningStatus = setInterval(sendHeartbeat, 6000);
+var sec_left = 3*60*60 ;
+var showTimer = function() {
+  if (sec_left !== 0) {
+    for (var i in Socket) {
+      Socket[i].emit('heartbeat', {'timer': sec_left} );
+    }
+    sec_left--;
+  }
+}
+var interval = setInterval(function() {
+  if (sec_left == 0) {
+    clearInterval(interval);
+    setInterval(sendHeartbeat, 6000);
+    return false;
+  }
+  showTimer();
+},1000); 
+//var gameStartTime = setTimeout(startGame, 5000);
+ //var runningStatus = setInterval(sendHeartbeat, 6000);
+
