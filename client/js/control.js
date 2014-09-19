@@ -39,6 +39,10 @@ $(document).ready(function() {
       $("td.td-"+num+ "> span").addClass("checked");
       $("#current").html(num);
     }
+
+    if ('message' in data) {
+      $("body > .container-fluid").html("<center class='jumbotron'><h1>"+ data.message +"</h1></center>");
+    }
   });
   socket.on('disconnect', function(){
     alert("You are offline");
