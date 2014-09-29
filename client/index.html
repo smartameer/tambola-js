@@ -11,6 +11,7 @@
       #ticket td span { border: 1px solid #ddd; font-weight: 600; font-size: 26px; border-radius: 200px; padding: 6px; }
       #ticket td span.checked { border-color: green; color: #fff; background: green; }
       div.col-sm-1 > span { vertical-align: middle; line-height:75px; }
+      footer { border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px; }
     </style>
   </head>
   <body>
@@ -53,14 +54,29 @@
             </div>
           </div>
           <div class="panel panel-success">
-            <div class="panel-heading">Upload Here</div>
+            <div class="panel-heading">Launched By</div>
             <div class="panel-body">
-              <input type="file" name="ticket">
+              <img src="./image003.png" height="126px" style="height: 126px"></img>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="modal-backdrop fade in"></div>
+    <div class="modal fade in" style="display: block">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div id="message" class="modal-body" style="padding: 200px 0"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid">
+        <div class="row-fluid">
+          <h4 class="text-right">&copy; <a href="mailto:pradeep.patro@happiestminds.com">Pradeep</a> & <a href="mailto:utsav.agrawal@happiestminds.com">Utsav</a></h4>
+        </div>
+      </div>
+    </footer>
     <script type='text/javascript' src="js/socket.io.js"></script>
     <script type='text/javascript' src="js/jquery.min.js"></script>
     <script type='text/javascript' src='js/control.js'></script>
