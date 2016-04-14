@@ -13,7 +13,7 @@ app.use(express.static(__dirname + "/../client"));
 var ticketArray = []
   , fileName = "tambola.log"
   , Socket = []
-  , secondsLeft = 3 * 60 * 60
+  , secondsLeft = 20
   ;
 
 var writeLog = function (str) {

@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Tambola</title>
-    <link rel="stylesheet" href="css/bootstrap-3.2.0.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <style>
-      body { padding-top: 30px; }
-      #ticket td span { border: 1px solid #ddd; font-weight: 600; font-size: 26px; border-radius: 200px; padding: 6px; }
-      #ticket td span.checked { border-color: green; color: #fff; background: green; }
+      body { padding-top: 20px; }
+      #ticket td { text-align: center; }
+      #ticket td span { border-radius: 50%; display: inline-block; font-size: 24px; font-weight: 600; height: 42px; line-height: 39px; vertical-align: middle; width: 42px;}
+      #ticket td span.checked { color: #fff; background: green; }
+      .panel, .panel-heading { border-radius: 0;}
       div.col-sm-1 > span { vertical-align: middle; line-height:75px; }
       footer { border-top: 1px solid #ddd; padding-top: 10px; margin-top: 30px; }
     </style>
@@ -53,12 +55,6 @@
               </div>
             </div>
           </div>
-          <div class="panel panel-success">
-            <div class="panel-heading">Launched By</div>
-            <div class="panel-body">
-              <img src="./image003.png" height="126px" style="height: 126px"></img>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -73,12 +69,12 @@
     <footer>
       <div class="container-fluid">
         <div class="row-fluid">
-          <h4 class="text-right">&copy; <a href="mailto:pradeep.patro@happiestminds.com">Pradeep</a> & <a href="mailto:utsav.agrawal@happiestminds.com">Utsav</a></h4>
+          <h4 class="text-right">&copy; Pradeep Patro</h4>
         </div>
       </div>
     </footer>
-    <script type='text/javascript' src="js/socket.io.js"></script>
-    <script type='text/javascript' src="js/jquery.min.js"></script>
-    <script type='text/javascript' src='js/control.js'></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script type="text/javascript" src="scripts/control.js"></script>
   </body>
 </html>
